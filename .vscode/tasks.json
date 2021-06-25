@@ -1,0 +1,36 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "mkdir ./bin",
+            "command": "mkdir -p ${fileDirname}/bin",
+            "detail": "创建./bin目录。",
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++ build",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/bin/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}",
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "调试器生成的任务。",
+            "dependsOn": [
+                "mkdir ./bin"
+            ]
+        }
+    ],
+    "version": "2.0.0"
+}
